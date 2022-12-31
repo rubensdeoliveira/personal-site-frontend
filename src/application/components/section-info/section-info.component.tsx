@@ -1,8 +1,8 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
-import { SectionTitleModel } from './models'
+import { SectionInfoModel } from './models'
 
-export function SectionHeader({ title, description }: SectionTitleModel) {
+export function SectionInfo({ title, description }: SectionInfoModel) {
   return (
     <Flex
       alignItems="center"

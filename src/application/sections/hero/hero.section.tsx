@@ -1,8 +1,17 @@
-import { Button, Flex, Text } from '@chakra-ui/react'
-import Image from 'next/image'
 import React from 'react'
+import { Flex, Text } from '@chakra-ui/react'
+import Image from 'next/image'
 
-export function HeroSection() {
+import { HeroSectionModel } from '@/infra/graphql/home/models'
+import { Button } from '@/application/components'
+
+export function HeroSection({
+  button,
+  description,
+  devApresentation,
+  devImage,
+  title,
+}: HeroSectionModel) {
   return (
     <Flex
       alignItems="center"
@@ -12,21 +21,30 @@ export function HeroSection() {
       mt={'5rem'}
     >
       <Flex flexDirection="column" maxWidth={'570px'}>
-        <Text>Hi, I’m John Andrew</Text>
-        <Text>Front End and Mobile App Developer</Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit mattis.{' '}
+        <Text
+          color={'red.500'}
+          fontSize={'2rem'}
+          lineHeight={'2.8rem'}
+          fontWeight={500}
+          mb={'1.1rem'}
+        >
+          {devApresentation}
         </Text>
-        <Button>Contact Me</Button>
+        <Text
+          fontSize={'4.4rem'}
+          lineHeight={'6.4rem'}
+          fontWeight={700}
+          mb={'2.1rem'}
+        >
+          {title}
+        </Text>
+        <Text fontSize={'1.8rem'} lineHeight={'2.8rem'} mb={'3.1rem'}>
+          {description}
+        </Text>
+        <Button>{button.label}</Button>
       </Flex>
       <Flex width={472} height={584} position="relative">
-        <Image
-          alt="José Rubens"
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          fill
-        />
+        <Image alt="Rubens Junior" src={devImage.url} fill />
       </Flex>
     </Flex>
   )

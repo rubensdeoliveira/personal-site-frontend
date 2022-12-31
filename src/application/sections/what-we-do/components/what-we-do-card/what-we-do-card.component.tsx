@@ -1,15 +1,15 @@
 import { Flex, Icon, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 import { FiPhone, FiArrowRight } from 'react-icons/fi'
+import { WhatWeDoCardModel } from './models'
 
-export function WhatWeDoCard() {
+export function WhatWeDoCard({ description, title }: WhatWeDoCardModel) {
   return (
     <Flex
       borderWidth={'3px'}
       borderColor={'gray.400'}
-      w="100%"
-      maxWidth={'373px'}
-      height={'346px'}
+      w={'373px'}
+      h={'346px'}
       p={'3.2rem'}
       flexDirection="column"
       borderRadius={'10px'}
@@ -32,12 +32,9 @@ export function WhatWeDoCard() {
         fontSize={'2.3rem'}
         lineHeight={'3rem'}
       >
-        Research
+        {title}
       </Text>
-      <Text lineHeight={'2.8rem'}>
-        Lorem ipsum dolor sit amet, consec tetur adipi scing elit. Ut elit
-        tellus, luctus nec ullamcorper mattis.
-      </Text>
+      <Text lineHeight={'2.8rem'}>{description}</Text>
       <Link
         display={'flex'}
         alignItems="center"

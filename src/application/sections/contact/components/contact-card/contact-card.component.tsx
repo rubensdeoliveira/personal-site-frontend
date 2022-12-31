@@ -1,5 +1,5 @@
-import { Flex, Icon, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Flex, Icon, Text } from '@chakra-ui/react'
 import { FiPhone } from 'react-icons/fi'
 
 export function ContactCard() {

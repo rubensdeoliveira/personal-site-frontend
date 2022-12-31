@@ -38,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const response = await client.request(getPostsQuery)
   const normalizedResponse = normalizeData(response.posts.data)
 
-  const paths = normalizedResponse.map(postItem => ({
+  const paths = normalizedResponse.map((postItem: Post) => ({
     params: { slug: postItem.slug },
   }))
 

@@ -1,9 +1,12 @@
-import { SectionHeader } from '@/application/components'
+import { SectionInfo } from '@/application/components'
+import { TestimonialsSectionModel } from '@/infra/graphql/home/models'
 import { Flex } from '@chakra-ui/react'
 import React from 'react'
 import { TestimonialCard } from './components'
 
-export function TestimonialsSection() {
+export function TestimonialsSection({
+  sectionHeader,
+}: TestimonialsSectionModel) {
   return (
     <Flex
       alignItems="center"
@@ -12,9 +15,9 @@ export function TestimonialsSection() {
       mt={'14.7rem'}
       flexDirection="column"
     >
-      <SectionHeader
-        title="TESTIMONIALS"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+      <SectionInfo
+        title={sectionHeader.title}
+        description={sectionHeader.description}
       />
       <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'1.3rem'}>
         <TestimonialCard />

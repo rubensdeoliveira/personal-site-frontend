@@ -1,8 +1,10 @@
-import { Flex, Icon, Text } from '@chakra-ui/react'
 import React from 'react'
 import { FiPhone } from 'react-icons/fi'
+import { Flex, Icon, Text } from '@chakra-ui/react'
 
-export function FooterSection() {
+import { FooterModel } from '@/infra/graphql/home/models'
+
+export function FooterSection({ title }: FooterModel) {
   return (
     <Flex
       bgColor={'gray.900'}
@@ -16,7 +18,7 @@ export function FooterSection() {
       flexDirection={'column'}
     >
       <Text fontSize={'2rem'} lineHeight={'3rem'} fontWeight={500}>
-        Get In Touch With Me
+        {title}
       </Text>
       <Text lineHeight={'2.8rem'} fontWeight={500}>
         Victoria Street No 1, London

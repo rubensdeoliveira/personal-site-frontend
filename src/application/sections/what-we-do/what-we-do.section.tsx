@@ -1,9 +1,15 @@
-import { SectionHeader } from '@/application/components'
-import { Flex } from '@chakra-ui/react'
 import React from 'react'
+import { Flex } from '@chakra-ui/react'
+
+import { SectionInfo } from '@/application/components'
+import { WhatWeDoSectionModel } from '@/infra/graphql/home/models'
 import { WhatWeDoCard } from './components'
 
-export function WhatWeDoSection() {
+export function WhatWeDoSection({
+  sectionHeader,
+  whatWeDoCard,
+}: WhatWeDoSectionModel) {
+  console.log(whatWeDoCard)
   return (
     <Flex
       alignItems="center"
@@ -13,17 +19,18 @@ export function WhatWeDoSection() {
       mt={'14.6rem'}
       flexDirection="column"
     >
-      <SectionHeader
-        title="WHAT WE DO"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+      <SectionInfo
+        title={sectionHeader.title}
+        description={sectionHeader.description}
       />
       <Flex flexWrap={'wrap'} gap={'2.05rem'}>
-        <WhatWeDoCard />
-        <WhatWeDoCard />
-        <WhatWeDoCard />
-        <WhatWeDoCard />
-        <WhatWeDoCard />
-        <WhatWeDoCard />
+        {whatWeDoCard.map(whatWeDoCardItem => (
+          <WhatWeDoCard
+            key={whatWeDoCardItem.id}
+            title={whatWeDoCardItem.title}
+            description={whatWeDoCardItem.description}
+          />
+        ))}
       </Flex>
     </Flex>
   )

@@ -1,4 +1,4 @@
-export type SectionTitleModel = {
+export type SectionInfoModel = {
   title: string
   description: string
 }

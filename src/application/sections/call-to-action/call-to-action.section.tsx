@@ -1,7 +1,10 @@
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
-export function CallToActionSection() {
+import { CallToActionSectionModel } from '@/infra/graphql/home/models'
+import { Button } from '@/application/components'
+
+export function CallToActionSection({ title }: CallToActionSectionModel) {
   return (
     <Flex
       flexWrap={'wrap'}
@@ -20,7 +23,7 @@ export function CallToActionSection() {
         lineHeight={'4.4rem'}
         maxWidth={'415px'}
       >
-        Discover How Design Can Help Your Business
+        {title}
       </Text>
       <Button>Contact Me</Button>
     </Flex>

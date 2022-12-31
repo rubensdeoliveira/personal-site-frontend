@@ -1,9 +1,15 @@
-import { SectionHeader } from '@/application/components'
-import { Flex, Grid } from '@chakra-ui/react'
 import React from 'react'
-import { ExperienceBar, ExperienceCard } from './components'
+import { Flex, Grid } from '@chakra-ui/react'
 
-export function ExperienceSection() {
+import { ExperienceBar, ExperienceCard } from './components'
+import { ExperienceSectionModel } from '@/infra/graphql/home/models'
+import { SectionInfo } from '@/application/components'
+
+export function ExperienceSection({
+  sectionHeader,
+  experienceBar,
+  experienceCard,
+}: ExperienceSectionModel) {
   return (
     <Flex
       alignItems="center"
@@ -13,14 +19,14 @@ export function ExperienceSection() {
       mt={'14.6rem'}
       flexDirection="column"
     >
-      <SectionHeader
-        title="EXPERIENCE & SKILLS"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+      <SectionInfo
+        title={sectionHeader.title}
+        description={sectionHeader.description}
       />
       <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'1.3rem'}>
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
+        {experienceCard.map(experienceCardItem => (
+          <ExperienceCard key={experienceCardItem.id} />
+        ))}
       </Flex>
       <Grid
         gridTemplateColumns={'1fr 1fr'}
@@ -28,12 +34,9 @@ export function ExperienceSection() {
         columnGap={'1.8rem'}
         rowGap={'3.1rem'}
       >
-        <ExperienceBar />
-        <ExperienceBar />
-        <ExperienceBar />
-        <ExperienceBar />
-        <ExperienceBar />
-        <ExperienceBar />
+        {experienceBar.map(experienceBarItem => (
+          <ExperienceBar key={experienceBarItem.id} />
+        ))}
       </Grid>
     </Flex>
   )

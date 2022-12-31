@@ -1,10 +1,13 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 
-import { SectionHeader } from '@/application/components'
 import { CountNumbers } from './components'
+import { CountInNumbersSectionModel } from '@/infra/graphql/home/models'
+import { SectionInfo } from '@/application/components'
 
-export function CountInNumbersSection() {
+export function CountInNumbersSection({
+  sectionHeader,
+}: CountInNumbersSectionModel) {
   return (
     <Flex
       alignItems="center"
@@ -13,9 +16,9 @@ export function CountInNumbersSection() {
       mt={'11.2rem'}
       flexDirection="column"
     >
-      <SectionHeader
-        title="COUNT IN NUMBERS"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+      <SectionInfo
+        title={sectionHeader.title}
+        description={sectionHeader.description}
       />
       <Flex
         flexWrap={'wrap'}
