@@ -1,13 +1,18 @@
 import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
-export function ExperienceCard() {
+import { ExperienceCardModel } from '@/infra/graphql/home/models'
+
+export function ExperienceCard({
+  company,
+  description,
+  job,
+}: ExperienceCardModel) {
   return (
     <Flex
       borderWidth={'3px'}
       borderColor={'gray.400'}
-      w="100%"
-      maxWidth={'373px'}
+      w={'373px'}
       height={'244px'}
       flexDirection="column"
       justifyContent="center"
@@ -19,7 +24,7 @@ export function ExperienceCard() {
         textTransform="uppercase"
         mb={'1.5rem'}
       >
-        2014 - 2015 (WEB DESIGNER)
+        {job}
       </Text>
       <Text
         textTransform="uppercase"
@@ -28,12 +33,9 @@ export function ExperienceCard() {
         lineHeight={'2.7rem'}
         mb={'1.9rem'}
       >
-        FOX MEDIA INC.
+        {company}
       </Text>
-      <Text lineHeight={'2.8rem'}>
-        Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Ut elit
-        pulvinar dapibus leo.
-      </Text>
+      <Text lineHeight={'2.8rem'}>{description}</Text>
     </Flex>
   )
 }

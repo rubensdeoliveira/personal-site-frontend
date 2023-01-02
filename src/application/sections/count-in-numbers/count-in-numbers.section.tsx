@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Flex } from '@chakra-ui/react'
 
 import { CountNumbers } from './components'
@@ -7,7 +7,16 @@ import { SectionInfo } from '@/application/components'
 
 export function CountInNumbersSection({
   sectionHeader,
+  countItems,
 }: CountInNumbersSectionModel) {
+  const renderCountNumbers = useMemo(
+    () =>
+      countItems.map(countItem => (
+        <CountNumbers key={countItem.id} {...countItem} />
+      )),
+    [countItems],
+  )
+
   return (
     <Flex
       alignItems="center"
@@ -26,10 +35,7 @@ export function CountInNumbersSection({
         width={'100%'}
         justifyContent="space-between"
       >
-        <CountNumbers />
-        <CountNumbers />
-        <CountNumbers />
-        <CountNumbers />
+        {renderCountNumbers}
       </Flex>
     </Flex>
   )

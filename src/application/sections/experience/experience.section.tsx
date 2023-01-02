@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Flex, Grid } from '@chakra-ui/react'
 
 import { ExperienceBar, ExperienceCard } from './components'
@@ -7,9 +7,25 @@ import { SectionInfo } from '@/application/components'
 
 export function ExperienceSection({
   sectionHeader,
-  experienceBar,
-  experienceCard,
+  experienceBars,
+  experienceCards,
 }: ExperienceSectionModel) {
+  const renderExperienceCards = useMemo(
+    () =>
+      experienceCards.map(experienceCard => (
+        <ExperienceCard key={experienceCard.id} {...experienceCard} />
+      )),
+    [experienceCards],
+  )
+
+  const renderExperienceBars = useMemo(
+    () =>
+      experienceBars.map(experienceBar => (
+        <ExperienceBar key={experienceBar.id} {...experienceBar} />
+      )),
+    [experienceBars],
+  )
+
   return (
     <Flex
       alignItems="center"
@@ -24,9 +40,7 @@ export function ExperienceSection({
         description={sectionHeader.description}
       />
       <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'1.3rem'}>
-        {experienceCard.map(experienceCardItem => (
-          <ExperienceCard key={experienceCardItem.id} />
-        ))}
+        {renderExperienceCards}
       </Flex>
       <Grid
         gridTemplateColumns={'1fr 1fr'}
@@ -34,9 +48,7 @@ export function ExperienceSection({
         columnGap={'1.8rem'}
         rowGap={'3.1rem'}
       >
-        {experienceBar.map(experienceBarItem => (
-          <ExperienceBar key={experienceBarItem.id} />
-        ))}
+        {renderExperienceBars}
       </Grid>
     </Flex>
   )

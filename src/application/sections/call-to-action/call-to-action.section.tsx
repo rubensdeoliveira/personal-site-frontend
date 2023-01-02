@@ -4,7 +4,10 @@ import React from 'react'
 import { CallToActionSectionModel } from '@/infra/graphql/home/models'
 import { Button } from '@/application/components'
 
-export function CallToActionSection({ title }: CallToActionSectionModel) {
+export function CallToActionSection({
+  title,
+  button,
+}: CallToActionSectionModel) {
   return (
     <Flex
       flexWrap={'wrap'}
@@ -25,7 +28,7 @@ export function CallToActionSection({ title }: CallToActionSectionModel) {
       >
         {title}
       </Text>
-      <Button>Contact Me</Button>
+      <Button link={button.link}>{button.label}</Button>
     </Flex>
   )
 }

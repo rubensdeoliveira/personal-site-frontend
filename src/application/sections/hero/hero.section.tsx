@@ -41,7 +41,7 @@ export function HeroSection({
         <Text fontSize={'1.8rem'} lineHeight={'2.8rem'} mb={'3.1rem'}>
           {description}
         </Text>
-        <Button>{button.label}</Button>
+        <Button link={button.link}>{button.label}</Button>
       </Flex>
       <Flex width={472} height={584} position="relative">
         <Image alt="Rubens Junior" src={devImage.url} fill />

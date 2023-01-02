@@ -1,9 +1,17 @@
 import { Flex, Icon, Link, Text } from '@chakra-ui/react'
 import React from 'react'
-import { FiPhone, FiArrowRight } from 'react-icons/fi'
-import { WhatWeDoCardModel } from './models'
+import { FiArrowRight } from 'react-icons/fi'
 
-export function WhatWeDoCard({ description, title }: WhatWeDoCardModel) {
+import { getWhatWeDoIcon } from './constants'
+import { WhatWeDoCardModel } from '@/infra/graphql/home/models'
+
+export function WhatWeDoCard({
+  description,
+  title,
+  iconType,
+  link,
+  linkText,
+}: WhatWeDoCardModel) {
   return (
     <Flex
       borderWidth={'3px'}
@@ -24,7 +32,7 @@ export function WhatWeDoCard({ description, title }: WhatWeDoCardModel) {
         mb={'4.1rem'}
         flexShrink={0}
       >
-        <Icon as={FiPhone} w={'3rem'} h={'3rem'} />
+        <Icon as={getWhatWeDoIcon(iconType)} w={'3rem'} h={'3rem'} />
       </Flex>
       <Text
         mb={'1.6rem'}
@@ -40,9 +48,10 @@ export function WhatWeDoCard({ description, title }: WhatWeDoCardModel) {
         alignItems="center"
         marginTop={'auto'}
         gap={'0.8rem'}
+        href={link}
       >
         <Text fontWeight={500} lineHeight={'2.8rem'}>
-          Contact me
+          {linkText}
         </Text>
         <Icon as={FiArrowRight} w={'2.4rem'} h={'2.4rem'} />
       </Link>

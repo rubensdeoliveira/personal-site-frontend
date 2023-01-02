@@ -26,7 +26,7 @@ export const getHomePageQuery = gql`
         title
         description
       }
-      whatWeDoCard {
+      whatWeDoCards {
         id
         title
         description
@@ -43,13 +43,13 @@ export const getHomePageQuery = gql`
         title
         description
       }
-      experienceCard {
+      experienceCards {
         job
         company
         description
         id
       }
-      experienceBar {
+      experienceBars {
         language
         experienceLevel
         id
@@ -63,9 +63,10 @@ export const getHomePageQuery = gql`
         title
         description
       }
-      countComponent {
+      countItems {
         countNumber
         countText
+        id
       }
     }
   }
@@ -76,14 +77,8 @@ export const getHomePageQuery = gql`
         title
         description
       }
-      testimonialCard {
-        quoteImage {
-          data {
-            attributes {
-              url
-            }
-          }
-        }
+      testimonialCards {
+        id
         description
         photo {
           data {
@@ -110,9 +105,10 @@ export const getHomePageQuery = gql`
 
   fragment GetContact on Home {
     contact {
-      contactCard {
+      contactCards {
         contactText
         contactType
+        id
       }
     }
   }
@@ -120,13 +116,15 @@ export const getHomePageQuery = gql`
   fragment GetFooter on Home {
     footer {
       title
-      footerInfo {
-        footerInfoItemText
-        footerInfoItemLink
+      footerInfoTextLinks {
+        text
+        link
+        id
       }
-      socialIcons {
-        socialIconType
-        socialIconLink
+      footerInfoIconLinks {
+        iconType
+        link
+        id
       }
     }
   }

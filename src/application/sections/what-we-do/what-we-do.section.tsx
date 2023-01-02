@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Flex } from '@chakra-ui/react'
 
 import { SectionInfo } from '@/application/components'
@@ -7,9 +7,16 @@ import { WhatWeDoCard } from './components'
 
 export function WhatWeDoSection({
   sectionHeader,
-  whatWeDoCard,
+  whatWeDoCards,
 }: WhatWeDoSectionModel) {
-  console.log(whatWeDoCard)
+  const renderWhatWeDoCards = useMemo(
+    () =>
+      whatWeDoCards.map(whatWeDoCard => (
+        <WhatWeDoCard key={whatWeDoCard.id} {...whatWeDoCard} />
+      )),
+    [whatWeDoCards],
+  )
+
   return (
     <Flex
       alignItems="center"
@@ -24,13 +31,7 @@ export function WhatWeDoSection({
         description={sectionHeader.description}
       />
       <Flex flexWrap={'wrap'} gap={'2.05rem'}>
-        {whatWeDoCard.map(whatWeDoCardItem => (
-          <WhatWeDoCard
-            key={whatWeDoCardItem.id}
-            title={whatWeDoCardItem.title}
-            description={whatWeDoCardItem.description}
-          />
-        ))}
+        {renderWhatWeDoCards}
       </Flex>
     </Flex>
   )

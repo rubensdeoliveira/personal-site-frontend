@@ -1,8 +1,10 @@
 import React from 'react'
 import { Flex, Icon, Text } from '@chakra-ui/react'
-import { FiPhone } from 'react-icons/fi'
 
-export function ContactCard() {
+import { ContactCardModel } from '@/infra/graphql/home/models'
+import { getContactIcon } from './constants'
+
+export function ContactCard({ contactText, contactType }: ContactCardModel) {
   return (
     <Flex
       borderWidth={'3px'}
@@ -26,10 +28,10 @@ export function ContactCard() {
         mb={'2.4rem'}
         flexShrink={0}
       >
-        <Icon as={FiPhone} w={'3rem'} h={'3rem'} />
+        <Icon as={getContactIcon(contactType)} w={'3rem'} h={'3rem'} />
       </Flex>
       <Text fontSize={'1.8rem'} lineHeight={'2.2rem'} textAlign="center">
-        hello@mobdev.com
+        {contactText}
       </Text>
     </Flex>
   )

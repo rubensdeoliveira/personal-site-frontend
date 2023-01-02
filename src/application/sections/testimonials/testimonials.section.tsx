@@ -1,12 +1,21 @@
 import { SectionInfo } from '@/application/components'
 import { TestimonialsSectionModel } from '@/infra/graphql/home/models'
 import { Flex } from '@chakra-ui/react'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { TestimonialCard } from './components'
 
 export function TestimonialsSection({
   sectionHeader,
+  testimonialCards,
 }: TestimonialsSectionModel) {
+  const renderTestemonialCards = useMemo(
+    () =>
+      testimonialCards.map(testimonialCard => (
+        <TestimonialCard key={testimonialCard.id} {...testimonialCard} />
+      )),
+    [testimonialCards],
+  )
+
   return (
     <Flex
       alignItems="center"
@@ -20,9 +29,7 @@ export function TestimonialsSection({
         description={sectionHeader.description}
       />
       <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'1.3rem'}>
-        <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
+        {renderTestemonialCards}
       </Flex>
     </Flex>
   )

@@ -11,19 +11,34 @@ export type HeroSectionModel = {
   }
 }
 
+export type WhatWeDoCardModel = {
+  title: string
+  description: string
+  linkText: string
+  link: string
+  iconType: string
+  id: string
+}
+
 export type WhatWeDoSectionModel = {
   sectionHeader: {
     title: string
     description: string
   }
-  whatWeDoCard: Array<{
-    title: string
-    description: string
-    linkText: string
-    link: string
-    iconType: string
-    id: string
-  }>
+  whatWeDoCards: WhatWeDoCardModel[]
+}
+
+export type ExperienceCardModel = {
+  job: string
+  company: string
+  description: string
+  id: string
+}
+
+export type ExperienceBarModel = {
+  language: string
+  experienceLevel: number
+  id: string
 }
 
 export type ExperienceSectionModel = {
@@ -31,17 +46,14 @@ export type ExperienceSectionModel = {
     title: string
     description: string
   }
-  experienceCard: Array<{
-    job: string
-    company: string
-    description: string
-    id: string
-  }>
-  experienceBar: Array<{
-    language: string
-    experienceLevel: string
-    id: string
-  }>
+  experienceCards: ExperienceCardModel[]
+  experienceBars: ExperienceBarModel[]
+}
+
+export type CountItemModel = {
+  countNumber: string
+  countText: string
+  id: string
 }
 
 export type CountInNumbersSectionModel = {
@@ -49,10 +61,17 @@ export type CountInNumbersSectionModel = {
     title: string
     description: string
   }
-  countComponent: {
-    countNumber: string
-    countText: string
+  countItems: CountItemModel[]
+}
+
+export type TestimonialCardModel = {
+  description: string
+  photo?: {
+    url: string
   }
+  name: string
+  job: string
+  id: string
 }
 
 export type TestimonialsSectionModel = {
@@ -60,17 +79,7 @@ export type TestimonialsSectionModel = {
     title: string
     description: string
   }
-  testimonialCard: {
-    quoteImage: {
-      url: string
-    }
-    description: string
-    photo: {
-      url: string
-    }
-    name: string
-    job: string
-  }
+  testimonialCards: TestimonialCardModel[]
 }
 
 export type CallToActionSectionModel = {
@@ -81,23 +90,28 @@ export type CallToActionSectionModel = {
   }
 }
 
+export type ContactCardModel = {
+  contactText: string
+  contactType: string
+  id: string
+}
+
 export type ContactSectionModel = {
-  contactCard: {
-    contactText: string
-    contactType: string
-  }
+  contactCards: ContactCardModel[]
 }
 
 export type FooterSectionModel = {
   title: string
-  footerInfo: {
-    footerInfoItemText: string
-    footerInfoItemLink: string
-  }
-  socialIcons: {
-    socialIconType: string
-    socialIconLink: string
-  }
+  footerInfoTextLinks: Array<{
+    text: string
+    link: string
+    id: string
+  }>
+  footerInfoIconLinks: Array<{
+    iconType: string
+    link: string
+    id: string
+  }>
 }
 
 export type HomePageQueryModel = {
