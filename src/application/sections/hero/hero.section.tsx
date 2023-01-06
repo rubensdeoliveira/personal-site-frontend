@@ -18,7 +18,7 @@ export function HeroSection({
       justifyContent="space-between"
       as="section"
       gap={'1.6rem'}
-      mt={'5rem'}
+      mt={'2.8rem'}
     >
       <Flex flexDirection="column" maxWidth={'570px'}>
         <Text

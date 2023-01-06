@@ -1,4 +1,4 @@
-import { Layout } from '@/application/components'
+import { Header, Layout, Sidebar } from '@/application/components'
 import { normalizeData } from '@/application/helpers'
 import {
   CountInNumbersSection,
@@ -27,8 +27,10 @@ export default function Home({
 }: HomePageQueryModel) {
   return (
     <>
-      <main>
-        <Layout>
+      <Layout>
+        <Header />
+        <Sidebar menuItems={[]} />
+        <main>
           <HeroSection {...hero} />
           <WhatWeDoSection {...whatWeDo} />
           <ExperienceSection {...experience} />
@@ -36,8 +38,8 @@ export default function Home({
           <TestimonialsSection {...testimonials} />
           <CallToActionSection {...callToAction} />
           <ContactSection {...contact} />
-        </Layout>
-      </main>
+        </main>
+      </Layout>
       <FooterSection {...footer} />
     </>
   )

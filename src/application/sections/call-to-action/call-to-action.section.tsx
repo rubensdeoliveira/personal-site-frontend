@@ -12,7 +12,7 @@ export function CallToActionSection({
     <Flex
       flexWrap={'wrap'}
       gap={'2rem'}
-      mt={'14.1rem'}
+      mt={'11.3rem'}
       bgColor={'gray.400'}
       px={'7.8rem'}
       py={'7.6rem'}

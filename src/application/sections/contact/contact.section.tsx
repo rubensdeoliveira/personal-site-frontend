@@ -14,7 +14,7 @@ export function ContactSection({ contactCards }: ContactSectionModel) {
   )
 
   return (
-    <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'9.2rem'}>
+    <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'9.2rem'} mb={'11.8rem'}>
       {renderContactCards}
     </Flex>
   )

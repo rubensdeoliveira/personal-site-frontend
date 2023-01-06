@@ -15,6 +15,8 @@ import { SidebarModel } from './models'
 export function Sidebar({ menuItems }: SidebarModel) {
   const { isOpen, onClose } = useSidebar()
 
+  console.log(isOpen)
+
   const isMobile = useBreakpointValue({
     base: true,
     lg: false,

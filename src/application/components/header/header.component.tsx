@@ -13,7 +13,12 @@ export function Header() {
   })
 
   return (
-    <Flex alignItems="center" justifyContent="space-between" my={'4.1rem'}>
+    <Flex
+      as="header"
+      alignItems="center"
+      justifyContent="space-between"
+      py={'4.1rem'}
+    >
       <Flex align="center">
         {isMobile && (
           <IconButton

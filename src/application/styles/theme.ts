@@ -2,6 +2,13 @@ import { extendTheme } from '@chakra-ui/react'
 import { lighten } from 'polished'
 
 export const theme = extendTheme({
+  breakpoints: {
+    sm: '320px',
+    md: '768px',
+    lg: '960px',
+    xl: '1220px',
+    '2xl': '1536px',
+  },
   colors: {
     'gray.400': '#2E2E30',
     'gray.500': '#343434',

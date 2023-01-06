@@ -17,7 +17,9 @@ export function Button({ children, link, ...rest }: ButtonModel) {
         h={'56px'}
         _hover={{ bgColor: 'red.500.lighten' }}
       >
-        <Text>{children}</Text>
+        <Text lineHeight={'2rem'} fontWeight={400}>
+          {children}
+        </Text>
       </ChakraButton>
     </Link>
   )
