@@ -29,7 +29,12 @@ export function WhatWeDoSection({
         title={sectionHeader.title}
         description={sectionHeader.description}
       />
-      <Flex flexWrap={'wrap'} gap={'2.05rem'}>
+      <Flex
+        flexWrap={'wrap'}
+        gap={['1.6rem', '1.6rem', '1.6rem', '2.05rem', '2.05rem', '2.05rem']}
+        w={'100%'}
+        justifyContent="center"
+      >
         {renderWhatWeDoCards}
       </Flex>
     </Flex>

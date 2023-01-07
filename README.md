@@ -1,9 +1,9 @@
 # Melhorias
 
-- [ ] Adicionar responsividade na home
+- [x] Adicionar responsividade na home
 - [x] Adicionar responsividade na pagina aprenda comigo
 - [x] Adicionar botāo de anterior e proximo com nome do proximo topico em aprenda comigo
-- [ ] Adicionar limitador de linhas nas caixas dos componentes da home para nao quebrar o layout
+- [x] Adicionar limitador de linhas nas caixas dos componentes da home para nao quebrar o layout
 - [x] Adicionar menu do mobile
 - [x] Adicionar marcador no menu principal para o usuario saber em que pagina se encontra
 - [x] Adicionar marcador no menu de posts no aprenda comigo para o usuario saber em que post esta
@@ -19,6 +19,7 @@
 - [ ] Colocar uma boa foto como foto do perfil na home
 - [ ] Alterar a logo para uma logo bonita na home
 - [ ] Adicionar cor na barra de rolagem
+- [ ] Colocar botões de navegaçāo de posts em baixo da tela se o conteudo nao for ate la em baixo
 
 
 

@@ -27,7 +27,13 @@ export function TestimonialsSection({
         title={sectionHeader.title}
         description={sectionHeader.description}
       />
-      <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'1.3rem'}>
+      <Flex
+        flexWrap={'wrap'}
+        gap={'2.05rem'}
+        mt={'1.3rem'}
+        justifyContent="center"
+        w={'100%'}
+      >
         {renderTestemonialCards}
       </Flex>
     </Flex>

@@ -11,42 +11,59 @@ export function TestimonialCard({
 }: TestimonialCardModel) {
   return (
     <Flex
-      w={'373px'}
-      h={'467px'}
+      maxW={'373px'}
+      w={'100%'}
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      p={'3.4rem'}
+      px={'3.4rem'}
+      py={'4.1rem'}
       bgColor={'gray.400'}
       borderRadius={'10px'}
     >
       <Image src={'/imgs/quote.svg'} alt="Quote" width={60} height={44} />
       <Text
-        lineHeight={'2.8rem'}
-        fontSize={'1.7rem'}
+        lineHeight={1.6}
+        fontSize={[
+          '1.4rem',
+          '1.4rem',
+          '1.4rem',
+          '1.55rem',
+          '1.55rem',
+          '1.7rem',
+        ]}
         textAlign="center"
         mt={'2.9rem'}
+        fontStyle="italic"
+        noOfLines={3}
       >
         {description}
       </Text>
       <Avatar
         name={name}
         src={photo?.url}
-        w={'90px'}
-        h={'90px'}
+        w={['60px', '60px', '60px', '75px', '75px', '90px']}
+        h={['60px', '60px', '60px', '75px', '75px', '90px']}
         mt={'2.1rem'}
-        size="2xl"
+        size={['xl', 'xl', 'xl', '2xl', '2xl', '2xl']}
       />
       <Text
-        lineHeight={'3rem'}
-        fontSize={'1.8rem'}
+        lineHeight={1.6}
+        fontSize={['1.4rem', '1.4rem', '1.4rem', '1.6rem', '1.6rem', '1.8rem']}
         fontWeight={500}
         textAlign="center"
         mt="1.7rem"
+        noOfLines={1}
       >
         {name}
       </Text>
-      <Text lineHeight={'2.8rem'} fontWeight={300} textAlign="center">
+      <Text
+        fontSize={['1.2rem', '1.2rem', '1.2rem', '1.4rem', '1.4rem', '1.6rem']}
+        lineHeight={1.75}
+        fontWeight={300}
+        textAlign="center"
+        noOfLines={1}
+      >
         {job}
       </Text>
     </Flex>

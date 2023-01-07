@@ -9,12 +9,12 @@ export function SectionInfo({ title, description }: SectionInfoModel) {
       justifyContent="center"
       w={'100%'}
       flexDirection="column"
-      gap={'2.2rem'}
+      gap={['1.4rem', '1.4rem', '1.4rem', '1.8rem', '1.8rem', '2.2rem']}
     >
       <Text
         fontWeight={600}
-        fontSize={'3.4rem'}
-        lineHeight={'4.4rem'}
+        fontSize={['2.6rem', '2.6rem', '2.6rem', '3rem', '3rem', '3.4rem']}
+        lineHeight={1.3}
         mb="0.2rem"
         textTransform={'uppercase'}
         textAlign="center"
@@ -22,7 +22,12 @@ export function SectionInfo({ title, description }: SectionInfoModel) {
         {title}
       </Text>
       <Box width={'100px'} height={'2px'} bgColor="red.500" />
-      <Text lineHeight={'2.8rem'} maxWidth={'570px'} textAlign="center">
+      <Text
+        fontSize={['1.2rem', '1.2rem', '1.2rem', '1.4rem', '1.4rem', '1.6rem']}
+        lineHeight={1.75}
+        maxWidth={'570px'}
+        textAlign="center"
+      >
         {description}
       </Text>
     </Flex>

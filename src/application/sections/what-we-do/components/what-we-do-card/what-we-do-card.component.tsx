@@ -16,8 +16,8 @@ export function WhatWeDoCard({
     <Flex
       borderWidth={'3px'}
       borderColor={'gray.400'}
-      w={'373px'}
-      h={'346px'}
+      w={'100%'}
+      maxW={'373px'}
       p={'3.2rem'}
       flexDirection="column"
       borderRadius={'10px'}
@@ -25,35 +25,57 @@ export function WhatWeDoCard({
       <Flex
         bgColor={'red.500'}
         borderRadius={'50%'}
-        w={'60px'}
-        h={'60px'}
+        w={['40px', '40px', '40px', '50px', '50px', '60px']}
+        h={['40px', '40px', '40px', '50px', '50px', '60px']}
         alignItems="center"
         justifyContent="center"
-        mb={'4.1rem'}
+        mb={['3.5rem', '3.5rem', '3.5rem', '3.8rem', '3.8rem', '4.1rem']}
         flexShrink={0}
       >
-        <Icon as={getWhatWeDoIcon(iconType)} w={'3rem'} h={'3rem'} />
+        <Icon
+          as={getWhatWeDoIcon(iconType)}
+          w={['20px', '20px', '20px', '25px', '25px', '30px']}
+          h={['20px', '20px', '20px', '25px', '25px', '30px']}
+        />
       </Flex>
       <Text
         mb={'1.6rem'}
         fontWeight={500}
-        fontSize={'2.3rem'}
-        lineHeight={'3rem'}
+        fontSize={['1.7rem', '1.7rem', '1.7rem', '2rem', '2rem', '2.3rem']}
+        lineHeight={1.3}
+        noOfLines={1}
       >
         {title}
       </Text>
-      <Text lineHeight={'2.8rem'}>{description}</Text>
-      <Link
-        display={'flex'}
-        alignItems="center"
-        marginTop={'auto'}
-        gap={'0.8rem'}
-        href={link}
+      <Text
+        fontSize={['1.2rem', '1.2rem', '1.2rem', '1.4rem', '1.4rem', '1.6rem']}
+        lineHeight={1.75}
+        mb={'1.8rem'}
+        noOfLines={3}
       >
-        <Text fontWeight={500} lineHeight={'2.8rem'}>
+        {description}
+      </Text>
+      <Link display={'flex'} alignItems="center" gap={'0.8rem'} href={link}>
+        <Text
+          fontWeight={500}
+          fontSize={[
+            '1.2rem',
+            '1.2rem',
+            '1.2rem',
+            '1.4rem',
+            '1.4rem',
+            '1.6rem',
+          ]}
+          lineHeight={1.75}
+          noOfLines={1}
+        >
           {linkText}
         </Text>
-        <Icon as={FiArrowRight} w={'2.4rem'} h={'2.4rem'} />
+        <Icon
+          as={FiArrowRight}
+          w={['1.6rem', '1.6rem', '1.6rem', '2rem', '2rem', '2.4rem']}
+          h={['1.6rem', '1.6rem', '1.6rem', '2rem', '2rem', '2.4rem']}
+        />
       </Link>
     </Flex>
   )

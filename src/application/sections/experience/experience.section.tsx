@@ -38,14 +38,28 @@ export function ExperienceSection({
         title={sectionHeader.title}
         description={sectionHeader.description}
       />
-      <Flex flexWrap={'wrap'} gap={'2.05rem'} mt={'1.3rem'}>
+      <Flex
+        flexWrap={'wrap'}
+        gap={['1.6rem', '1.6rem', '1.6rem', '2.05rem', '2.05rem', '2.05rem']}
+        mt={'1.3rem'}
+        justifyContent="center"
+        w={'100%'}
+      >
         {renderExperienceCards}
       </Flex>
       <Grid
-        gridTemplateColumns={'1fr 1fr'}
+        gridTemplateColumns={[
+          '1fr',
+          '1fr',
+          '1fr',
+          '1fr 1fr',
+          '1fr 1fr',
+          '1fr 1fr',
+        ]}
         w={'100%'}
         columnGap={'1.8rem'}
-        rowGap={'3.1rem'}
+        rowGap={['1.8rem', '1.8rem', '1.8rem', '3.1rem', '3.1rem', '3.1rem']}
+        maxWidth={['373px', '373px', '373px', '1160px', '1160px', '1160px']}
       >
         {renderExperienceBars}
       </Grid>

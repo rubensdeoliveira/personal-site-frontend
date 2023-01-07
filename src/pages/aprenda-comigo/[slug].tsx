@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { Flex } from '@chakra-ui/react'
 
 import { client } from '@/infra/graphql/common/client'
 import { normalizeData } from '@/application/helpers'
@@ -9,12 +10,10 @@ import {
 import { Post } from '@/infra/graphql/posts/models'
 import { getCategoriesQuery } from '@/infra/graphql/categories/queries'
 import { Category } from '@/infra/graphql/categories/models'
-import { Flex, Icon, Link, Text } from '@chakra-ui/react'
 import { Sidebar } from '@/application/components/sidebar'
 import { Header, Layout } from '@/application/components'
 import { MarkdownViewer } from '@/application/components/markdown-viewer'
-import { useMemo } from 'react'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { PostNavButton } from '@/application/components/post-nav-button'
 
 type LearnWithMeBySlugProps = {
   post: Post
@@ -25,49 +24,6 @@ export default function LearnWithMeBySlug({
   post,
   categories,
 }: LearnWithMeBySlugProps) {
-  const previousPost = useMemo((): Post | undefined => {
-    const postCategory = categories.find(
-      category => category.name === post.category.name,
-    )
-    if (postCategory) {
-      const postIndexInCategory = postCategory.posts.findIndex(
-        p => p.slug === post.slug,
-      )
-      if (postIndexInCategory > 0) {
-        return postCategory.posts[postIndexInCategory - 1]
-      } else {
-        const postCategoryIndex = categories.findIndex(
-          c => c.slug === postCategory.slug,
-        )
-        if (postCategoryIndex > 0) {
-          const categoryPosts = categories[postCategoryIndex - 1].posts
-          return categoryPosts[categoryPosts.length - 1]
-        }
-      }
-    }
-  }, [post, categories])
-
-  const nextPost = useMemo((): Post | undefined => {
-    const postCategory = categories.find(
-      category => category.name === post.category.name,
-    )
-    if (postCategory) {
-      const postIndexInCategory = postCategory.posts.findIndex(
-        p => p.slug === post.slug,
-      )
-      if (postIndexInCategory < postCategory.posts.length - 1) {
-        return postCategory.posts[postIndexInCategory + 1]
-      } else {
-        const postCategoryIndex = categories.findIndex(
-          c => c.slug === postCategory.slug,
-        )
-        if (postCategoryIndex < categories.length - 1) {
-          return categories[postCategoryIndex + 1].posts[0]
-        }
-      }
-    }
-  }, [post, categories])
-
   return (
     <Layout>
       <Header />
@@ -76,37 +32,12 @@ export default function LearnWithMeBySlug({
         <Flex flexDirection="column" flex={1}>
           <MarkdownViewer content={post.content} />
           <Flex width={'100%'} gap={'1.6rem'} mt={'6.4rem'} flexWrap="wrap">
-            {previousPost && (
-              <Link
-                href={`/aprenda-comigo/${previousPost.slug}`}
-                fontSize={'1.8rem'}
-                fontWeight={700}
-                lineHeight={1.5}
-                color={'red.500'}
-                display="flex"
-                alignItems={'center'}
-                gap={'0.4rem'}
-              >
-                <Icon as={FiChevronLeft} w={'2rem'} h={'2rem'} />
-                <Text>{previousPost.topic}</Text>
-              </Link>
-            )}
-            {nextPost && (
-              <Link
-                href={`/aprenda-comigo/${nextPost.slug}`}
-                marginLeft={'auto'}
-                fontSize={'1.8rem'}
-                fontWeight={700}
-                lineHeight={1.5}
-                color={'red.500'}
-                display="flex"
-                alignItems={'center'}
-                gap={'0.4rem'}
-              >
-                <Text>{nextPost.topic}</Text>
-                <Icon as={FiChevronRight} w={'2rem'} h={'2rem'} />
-              </Link>
-            )}
+            <PostNavButton
+              categories={categories}
+              post={post}
+              type={'previous'}
+            />
+            <PostNavButton categories={categories} post={post} type={'next'} />
           </Flex>
         </Flex>
       </Flex>

@@ -10,6 +10,7 @@ export const theme = extendTheme({
     '2xl': '1220px',
   },
   colors: {
+    'gray.100': '#DDDDDD',
     'gray.400': '#2E2E30',
     'gray.500': '#343434',
     'gray.800': '#202020',

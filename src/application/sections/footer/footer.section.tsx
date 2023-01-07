@@ -13,7 +13,19 @@ export function FooterSection({
     () =>
       footerInfoTextLinks.map(footerInfoTextLink => (
         <Link key={footerInfoTextLink.id} href={footerInfoTextLink.link}>
-          <Text lineHeight={'2.8rem'} fontWeight={500}>
+          <Text
+            fontSize={[
+              '1.2rem',
+              '1.2rem',
+              '1.2rem',
+              '1.4rem',
+              '1.4rem',
+              '1.6rem',
+            ]}
+            lineHeight={1.75}
+            fontWeight={400}
+            color={'gray.100'}
+          >
             {footerInfoTextLink.text}
           </Text>
         </Link>
@@ -28,16 +40,16 @@ export function FooterSection({
           <Flex
             bgColor={'gray.400'}
             borderRadius={'50%'}
-            w={'46px'}
-            h={'46px'}
+            w={['38px', '38px', '38px', '42px', '42px', '46px']}
+            h={['38px', '38px', '38px', '42px', '42px', '46px']}
             alignItems="center"
             justifyContent="center"
             flexShrink={0}
           >
             <Icon
               as={getFooterIcon(footerInfoIconLink.iconType)}
-              w={'2.4rem'}
-              h={'2.4rem'}
+              w={['2rem', '2rem', '2rem', '2.2rem', '2.2rem', '2.4rem']}
+              h={['2rem', '2rem', '2rem', '2.2rem', '2.2rem', '2.4rem']}
             />
           </Flex>
         </Link>
@@ -51,15 +63,15 @@ export function FooterSection({
       as="footer"
       w={'100%'}
       px={'3rem'}
-      pt={'11.4rem'}
-      pb={'15.6rem'}
+      pt={['7rem', '7rem', '7rem', '9rem', '9rem', '11.4rem']}
+      pb={['9rem', '9rem', '9rem', '12rem', '12rem', '15.6rem']}
       justifyContent="center"
       alignItems="center"
       flexDirection={'column'}
     >
       <Text
-        fontSize={'2rem'}
-        lineHeight={'3rem'}
+        fontSize={['1.6rem', '1.6rem', '1.6rem', '1.8rem', '1.8rem', '2rem']}
+        lineHeight={1.5}
         fontWeight={500}
         mb={'2.9rem'}
       >
