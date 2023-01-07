@@ -20,8 +20,7 @@ export function TestimonialsSection({
     <Flex
       alignItems="center"
       as="section"
-      gap={'4.9rem'}
-      mt={'14.7rem'}
+      gap={['3rem', '3rem', '3rem', '6rem', '6rem', '6rem']}
       flexDirection="column"
     >
       <SectionInfo

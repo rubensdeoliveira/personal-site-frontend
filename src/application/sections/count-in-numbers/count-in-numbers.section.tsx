@@ -21,8 +21,7 @@ export function CountInNumbersSection({
     <Flex
       alignItems="center"
       as="section"
-      gap={'8.8rem'}
-      mt={'11.2rem'}
+      gap={['3rem', '3rem', '3rem', '6rem', '6rem', '6rem']}
       flexDirection="column"
     >
       <SectionInfo

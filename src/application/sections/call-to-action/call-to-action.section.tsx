@@ -12,13 +12,13 @@ export function CallToActionSection({
     <Flex
       flexWrap={'wrap'}
       gap={'2rem'}
-      mt={'11.3rem'}
       bgColor={'gray.400'}
       px={'7.8rem'}
       py={'7.6rem'}
       justifyContent={'space-between'}
       alignItems="center"
       borderRadius={'10px'}
+      as="section"
     >
       <Text
         fontWeight={600}

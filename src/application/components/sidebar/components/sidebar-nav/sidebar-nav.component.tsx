@@ -1,8 +1,11 @@
 import { Box, Link, Stack, Text } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { SidebarNavModel } from './models'
 
 export function SidebarNav({ menuItems }: SidebarNavModel) {
+  const { asPath } = useRouter()
+
   const handlePostMenuItems = useMemo(
     () =>
       menuItems.map(menuItem => (
@@ -17,22 +20,31 @@ export function SidebarNav({ menuItems }: SidebarNavModel) {
           </Text>
           {menuItem.posts.length > 0 && (
             <Stack spacing={'0.8rem'} mt={'1.6rem'} align="stretch">
-              {menuItem.posts.map(post => (
-                <Link
-                  key={post.topic}
-                  href={`/aprenda-comigo/${post.slug}`}
-                  display="flex"
-                  alignItems="center"
-                >
-                  <Text
-                    fontWeight="medium"
-                    fontSize={'1.4rem'}
-                    lineHeight={'3rem'}
+              {menuItem.posts.map(post => {
+                const isSelected = asPath.includes(post.slug)
+                return (
+                  <Box
+                    key={post.topic}
+                    borderRadius={'8px'}
+                    bgColor={isSelected ? 'gray.500' : undefined}
+                    px={'1.2rem'}
                   >
-                    {post.topic}
-                  </Text>
-                </Link>
-              ))}
+                    <Link
+                      href={`/aprenda-comigo/${post.slug}`}
+                      display="flex"
+                      alignItems="center"
+                    >
+                      <Text
+                        fontWeight={isSelected ? 600 : 500}
+                        fontSize={'1.4rem'}
+                        lineHeight={'3rem'}
+                      >
+                        {post.topic}
+                      </Text>
+                    </Link>
+                  </Box>
+                )
+              })}
             </Stack>
           )}
         </Box>

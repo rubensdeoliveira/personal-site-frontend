@@ -8,6 +8,8 @@ export type HeroSectionModel = {
   }
   devImage: {
     url: string
+    width: number
+    height: number
   }
 }
 

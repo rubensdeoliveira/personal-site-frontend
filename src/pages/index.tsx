@@ -1,4 +1,4 @@
-import { Header, Layout, Sidebar } from '@/application/components'
+import { Header, Layout } from '@/application/components'
 import { normalizeData } from '@/application/helpers'
 import {
   CountInNumbersSection,
@@ -13,6 +13,7 @@ import {
 import { client } from '@/infra/graphql/common/client'
 import { HomePageQueryModel } from '@/infra/graphql/home/models'
 import { getHomePageQuery } from '@/infra/graphql/home/queries'
+import { Flex } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 
 export default function Home({
@@ -28,9 +29,14 @@ export default function Home({
   return (
     <>
       <Layout>
-        <Header />
-        <Sidebar menuItems={[]} />
-        <main>
+        <Header isHomePage />
+        <Flex
+          as="main"
+          gap={['6rem', '6rem', '6rem', '12rem', '12rem', '12rem']}
+          flexDir="column"
+          pt={['1.4rem', '1.4rem', '1.4rem', '2.8rem', '2.8rem', '2.8rem']}
+          pb={['6rem', '6rem', '6rem', '12rem', '12rem', '12rem']}
+        >
           <HeroSection {...hero} />
           <WhatWeDoSection {...whatWeDo} />
           <ExperienceSection {...experience} />
@@ -38,7 +44,7 @@ export default function Home({
           <TestimonialsSection {...testimonials} />
           <CallToActionSection {...callToAction} />
           <ContactSection {...contact} />
-        </main>
+        </Flex>
       </Layout>
       <FooterSection {...footer} />
     </>

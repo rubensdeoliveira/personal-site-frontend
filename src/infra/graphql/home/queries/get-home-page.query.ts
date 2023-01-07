@@ -14,6 +14,8 @@ export const getHomePageQuery = gql`
         data {
           attributes {
             url
+            width
+            height
           }
         }
       }

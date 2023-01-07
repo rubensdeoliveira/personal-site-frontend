@@ -22,8 +22,7 @@ export function WhatWeDoSection({
       alignItems="center"
       justifyContent="space-between"
       as="section"
-      gap={'6rem'}
-      mt={'14.6rem'}
+      gap={['3rem', '3rem', '3rem', '6rem', '6rem', '6rem']}
       flexDirection="column"
     >
       <SectionInfo

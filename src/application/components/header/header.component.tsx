@@ -4,7 +4,11 @@ import React from 'react'
 import { RiMenuLine } from 'react-icons/ri'
 import { Menu } from './components'
 
-export function Header() {
+type HeaderProps = {
+  isHomePage?: boolean
+}
+
+export function Header({ isHomePage = false }: HeaderProps) {
   const { onOpen } = useSidebar()
 
   const isMobile = useBreakpointValue({
@@ -17,10 +21,10 @@ export function Header() {
       as="header"
       alignItems="center"
       justifyContent="space-between"
-      py={'4.1rem'}
+      py={['2rem', '2rem', '2rem', '4.1rem', '4.1rem', '4.1rem']}
     >
       <Flex align="center">
-        {isMobile && (
+        {isMobile && !isHomePage && (
           <IconButton
             aria-label="Open navigation"
             icon={<Icon as={RiMenuLine} />}

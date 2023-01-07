@@ -8,6 +8,13 @@ export const getPostByTopicNameQuery = (slug: string) => gql`
           topic
           slug
           content
+          category {
+            data {
+              attributes {
+                name
+              }
+            }
+          }
         }
       }
     }

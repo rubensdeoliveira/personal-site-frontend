@@ -3,11 +3,11 @@ import { lighten } from 'polished'
 
 export const theme = extendTheme({
   breakpoints: {
-    sm: '320px',
-    md: '768px',
-    lg: '960px',
-    xl: '1220px',
-    '2xl': '1536px',
+    sm: '360px',
+    md: '576px',
+    lg: '768px',
+    xl: '992px',
+    '2xl': '1220px',
   },
   colors: {
     'gray.400': '#2E2E30',

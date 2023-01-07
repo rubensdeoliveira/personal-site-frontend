@@ -5,17 +5,14 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerHeader,
   DrawerOverlay,
   useBreakpointValue,
 } from '@chakra-ui/react'
 import { SidebarNav } from './components'
 import { SidebarModel } from './models'
 
-export function Sidebar({ menuItems }: SidebarModel) {
+export function Sidebar({ menuItems = [], isHomePage = false }: SidebarModel) {
   const { isOpen, onClose } = useSidebar()
-
-  console.log(isOpen)
 
   const isMobile = useBreakpointValue({
     base: true,
@@ -24,11 +21,10 @@ export function Sidebar({ menuItems }: SidebarModel) {
 
   if (isMobile) {
     return (
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="sm">
         <DrawerOverlay>
           <DrawerContent bg="gray.800" p={'1.6rem'}>
-            <DrawerCloseButton mt={'2.4rem'} />
-            <DrawerHeader>Navegaçāo</DrawerHeader>
+            <DrawerCloseButton mt={'1rem'} size="lg" />
             <DrawerBody>
               <SidebarNav menuItems={menuItems} />
             </DrawerBody>
@@ -36,6 +32,10 @@ export function Sidebar({ menuItems }: SidebarModel) {
         </DrawerOverlay>
       </Drawer>
     )
+  }
+
+  if (isHomePage) {
+    return null
   }
 
   return (

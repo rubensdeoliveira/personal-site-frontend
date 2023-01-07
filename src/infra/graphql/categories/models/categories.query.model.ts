@@ -1,9 +1,4 @@
-type Post = {
-  orderNum: number
-  topic: string
-  content: string
-  slug: string
-}
+import { Post } from '../../posts/models'
 
 export type Category = {
   name: string
