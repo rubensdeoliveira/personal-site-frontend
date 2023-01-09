@@ -12,6 +12,13 @@ export const getCategoriesQuery = gql`
               attributes {
                 topic
                 slug
+                category {
+                  data {
+                    attributes {
+                      name
+                    }
+                  }
+                }
               }
             }
           }

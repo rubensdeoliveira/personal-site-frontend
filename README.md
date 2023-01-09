@@ -20,6 +20,7 @@
 - [ ] Alterar a logo para uma logo bonita na home
 - [ ] Adicionar cor na barra de rolagem
 - [ ] Colocar botões de navegaçāo de posts em baixo da tela se o conteudo nao for ate la em baixo
+- [ ] Na tela de aprenda comigo, na lista de posts, fechar categoria e deixar apenas aberta a atual
 
 
 

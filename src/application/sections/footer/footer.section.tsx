@@ -62,7 +62,7 @@ export function FooterSection({
       bgColor={'gray.900'}
       as="footer"
       w={'100%'}
-      px={'3rem'}
+      px={['16px', '16px', '24px', '24px', '24px', '0']}
       pt={['7rem', '7rem', '7rem', '9rem', '9rem', '11.4rem']}
       pb={['9rem', '9rem', '9rem', '12rem', '12rem', '15.6rem']}
       justifyContent="center"

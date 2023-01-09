@@ -24,8 +24,8 @@ export function Sidebar({ menuItems = [], isHomePage = false }: SidebarModel) {
       <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="sm">
         <DrawerOverlay>
           <DrawerContent bg="gray.800" p={'1.6rem'}>
-            <DrawerCloseButton mt={'1rem'} size="lg" />
-            <DrawerBody>
+            <DrawerCloseButton mt={'3rem'} mr={'1rem'} size="lg" />
+            <DrawerBody mt="2rem">
               <SidebarNav menuItems={menuItems} />
             </DrawerBody>
           </DrawerContent>
@@ -39,7 +39,7 @@ export function Sidebar({ menuItems = [], isHomePage = false }: SidebarModel) {
   }
 
   return (
-    <Box as="aside" w={'256px'} mr={'3.2rem'} flexShrink={0}>
+    <Box as="aside" w={'256px'} mr={'3.2rem'} flexShrink={0} overflowY="auto">
       <SidebarNav menuItems={menuItems} />
     </Box>
   )
