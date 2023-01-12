@@ -6,7 +6,6 @@ import {
   HeroSection,
   TestimonialsSection,
   WhatWeDoSection,
-  ContactSection,
   CallToActionSection,
   FooterSection,
 } from '@/application/sections'
@@ -43,7 +42,7 @@ export default function Home({
           <CountInNumbersSection {...countInNumbers} />
           <TestimonialsSection {...testimonials} />
           <CallToActionSection {...callToAction} />
-          <ContactSection {...contact} />
+          {/* <ContactSection {...contact} /> */}
         </Flex>
       </Layout>
       <FooterSection {...footer} />

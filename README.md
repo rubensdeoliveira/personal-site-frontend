@@ -7,20 +7,18 @@
 - [x] Adicionar menu do mobile
 - [x] Adicionar marcador no menu principal para o usuario saber em que pagina se encontra
 - [x] Adicionar marcador no menu de posts no aprenda comigo para o usuario saber em que post esta
+- [x] Na tela de aprenda comigo, na lista de posts, fechar categoria e deixar apenas aberta a atual
+- [x] Adicionar cor na barra de rolagem
+- [x] Colocar imagens que compoem o layout no figma na home, tipo o quadrado ao redor da foto
+- [ ] Colocar animaçāo na seçāo de count in numbers para os numeros subirem animados
+- [ ] Colocar animaçāo nas demais seções da home
+- [ ] No lugar de rubens que ta como logo, colocar informações rapidas de contato
+- [ ] Colocar uma boa foto como foto do perfil na home
 - [ ] Adicionar metatags
 - [ ] Adicionar internacionalizaçāo
 - [ ] Adicionar possibilidade de recuperar senha do strapi
 - [ ] Criar dominio
 - [ ] Subir aplicaçāo para prod
 - [ ] Preencher os textos com informações reais
-- [ ] Colocar animaçāo na seçāo de count in numbers para os numeros subirem animados
-- [ ] Colocar animaçāo nas demais seções da home
-- [ ] Colocar imagens que compoem o layout no figma na home, tipo o quadrado ao redor da foto
-- [ ] Colocar uma boa foto como foto do perfil na home
-- [ ] Alterar a logo para uma logo bonita na home
-- [ ] Adicionar cor na barra de rolagem
-- [ ] Colocar botões de navegaçāo de posts em baixo da tela se o conteudo nao for ate la em baixo
-- [ ] Na tela de aprenda comigo, na lista de posts, fechar categoria e deixar apenas aberta a atual
-
-
-
+- [ ] Atualizar as chamadas de data fetching para o novo padrao do next
+- [ ] Adicionar opçāo de procurar por um conteúdo nos posts

@@ -39,7 +39,7 @@ export function Sidebar({ menuItems = [], isHomePage = false }: SidebarModel) {
   }
 
   return (
-    <Box as="aside" w={'256px'} mr={'3.2rem'} flexShrink={0} overflowY="auto">
+    <Box as="aside" w={'200px'} mr={'3.2rem'} flexShrink={0} overflowY="auto">
       <SidebarNav menuItems={menuItems} />
     </Box>
   )

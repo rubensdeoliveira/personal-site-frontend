@@ -31,7 +31,7 @@ export function ExperienceSection({
       alignItems="center"
       justifyContent="space-between"
       as="section"
-      gap={['3rem', '3rem', '3rem', '6rem', '6rem', '6rem']}
+      gap={['2.4rem', '2.4rem', '2.4rem', '4.8rem', '4.8rem', '4.8rem']}
       flexDirection="column"
     >
       <SectionInfo
@@ -41,7 +41,6 @@ export function ExperienceSection({
       <Flex
         flexWrap={'wrap'}
         gap={['1.6rem', '1.6rem', '1.6rem', '2.05rem', '2.05rem', '2.05rem']}
-        mt={'1.3rem'}
         justifyContent="center"
         w={'100%'}
       >

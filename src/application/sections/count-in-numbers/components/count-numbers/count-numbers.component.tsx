@@ -2,6 +2,7 @@ import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
 import { CountItemModel } from '@/infra/graphql/home/models'
+import { NumberAnimation } from './animations'
 
 export function CountNumbers({ countNumber, countText }: CountItemModel) {
   return (
@@ -16,7 +17,7 @@ export function CountNumbers({ countNumber, countText }: CountItemModel) {
         lineHeight={1.15}
         textAlign="center"
       >
-        {countNumber}
+        <NumberAnimation n={countNumber} />
       </Text>
       <Text
         color={'red.500'}

@@ -10,7 +10,7 @@ export function Layout({ children }: LayoutModel) {
       w="100%"
       maxWidth={'1160px'}
       mx="auto"
-      px={['16px', '16px', '24px', '24px', '24px', '0']}
+      px={['1.6rem', '1.6rem', '2.4rem', '2.4rem', '2.4rem', '0']}
     >
       {children}
     </Flex>

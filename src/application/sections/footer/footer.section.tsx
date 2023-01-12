@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Flex, Icon, Link, Text } from '@chakra-ui/react'
+import { Flex, Icon, Image, Link, Text } from '@chakra-ui/react'
 
 import { FooterSectionModel } from '@/infra/graphql/home/models'
 import { getFooterIcon } from './constants'
@@ -68,6 +68,8 @@ export function FooterSection({
       justifyContent="center"
       alignItems="center"
       flexDirection={'column'}
+      position="relative"
+      overflow={'hidden'}
     >
       <Text
         fontSize={['1.6rem', '1.6rem', '1.6rem', '1.8rem', '1.8rem', '2rem']}
@@ -83,6 +85,13 @@ export function FooterSection({
       <Flex gap={'2.7rem'} mt={'5.8rem'}>
         {renderInfoIconLinks}
       </Flex>
+      <Image
+        alt="Poligonos"
+        src={'/imgs/poligons.svg'}
+        position={'absolute'}
+        bottom={['-1000px', '-1000px', '-100px', '-75px', '-50px', '-25px']}
+        right={['-1000px', '-1000px', '-100px', '-75px', '-50px', '-25px']}
+      />
     </Flex>
   )
 }

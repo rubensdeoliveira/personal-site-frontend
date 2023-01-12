@@ -28,6 +28,17 @@ export const theme = extendTheme({
         color: 'white',
         fontFamily: 'Montserrat',
         fontSize: '1.6rem',
+        scrollbarColor: 'red',
+      },
+      'body::-webkit-scrollbar': {
+        width: '8px',
+      },
+      'body::-webkit-scrollbar-track': {
+        background: 'gray.500',
+      },
+      'body::-webkit-scrollbar-thumb': {
+        backgroundColor: 'red.500',
+        borderRadius: '20px',
       },
       a: {
         _hover: {

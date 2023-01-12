@@ -19,7 +19,7 @@ export function SidebarNav({ menuItems }: SidebarNavModel) {
   const handlePostMenuItems = useMemo(
     () =>
       menuItems.map(menuItem => (
-        <Box key={menuItem.slug}>
+        <Box key={menuItem.slug} width={'100%'}>
           <Text
             fontWeight="bold"
             color="red.500"
@@ -39,7 +39,12 @@ export function SidebarNav({ menuItems }: SidebarNavModel) {
             />
           </Text>
           {menuItem.posts.length > 0 && (
-            <Stack spacing={'0.8rem'} mt={'1.6rem'} align="stretch">
+            <Stack
+              spacing={'0.8rem'}
+              mt={'1.6rem'}
+              align="stretch"
+              width={'100%'}
+            >
               {menuItem.posts.map(post => {
                 const isSelected = asPath.includes(post.slug)
                 return categoryShow?.name === menuItem.name ? (
@@ -48,6 +53,7 @@ export function SidebarNav({ menuItems }: SidebarNavModel) {
                     borderRadius={'8px'}
                     bgColor={isSelected ? 'gray.500' : undefined}
                     px={'1.2rem'}
+                    _hover={{ bgColor: 'gray.500' }}
                   >
                     <Link
                       href={`/aprenda-comigo/${post.slug}`}

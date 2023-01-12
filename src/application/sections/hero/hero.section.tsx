@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import { HeroSectionModel } from '@/infra/graphql/home/models'
@@ -17,9 +17,10 @@ export function HeroSection({
       alignItems={['center', 'center', 'center', 'center', 'center', 'center']}
       justifyContent="space-between"
       as="section"
-      gap={'1.6rem'}
+      gap={'3rem'}
       flexWrap="wrap"
       flexDirection={['column', 'column', 'column', 'row', 'row', 'row']}
+      px={['2rem', '2rem', '2rem', '2rem', '2rem', '0']}
     >
       <Flex
         flexDirection="column"
@@ -66,11 +67,32 @@ export function HeroSection({
         mt={['2rem', '2rem', '2rem', '0', '0', '0']}
       >
         <Image
+          alt="Bolinhas vermelhas"
+          src={'/imgs/red-balls.svg'}
+          width={84}
+          height={127}
+          style={{
+            position: 'absolute',
+            zIndex: -1,
+            top: '-22px',
+            right: '-25px',
+          }}
+        />
+        <Image
           alt="Rubens Junior"
           src={devImage.url}
           width={472}
           height={584}
         />
+        <Box
+          position={'absolute'}
+          width={'100%'}
+          height={'100%'}
+          bottom={'-20px'}
+          left={'-20px'}
+          zIndex={-1}
+          bgColor={'gray.400'}
+        ></Box>
       </Flex>
     </Flex>
   )

@@ -9,6 +9,7 @@
     "@chakra-ui/react": "2.4.4",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "@react-spring/web": "^9.6.1",
     "framer-motion": "6",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",

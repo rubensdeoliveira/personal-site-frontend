@@ -53,7 +53,7 @@ export type ExperienceSectionModel = {
 }
 
 export type CountItemModel = {
-  countNumber: string
+  countNumber: number
   countText: string
   id: string
 }
