@@ -2,7 +2,7 @@ import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
 import { CountItemModel } from '@/infra/graphql/home/models'
-import { NumberAnimation } from './animations'
+import { NumberAnimation } from './animations/numbers.animation'
 
 export function CountNumbers({ countNumber, countText }: CountItemModel) {
   return (

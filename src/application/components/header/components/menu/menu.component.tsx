@@ -7,7 +7,7 @@ export function Menu() {
 
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Aprenda Comigo', path: '/aprenda-comigo' },
+    { label: 'Aprenda Comigo', path: '/aprenda-comigo/get-posts' },
   ]
 
   return (

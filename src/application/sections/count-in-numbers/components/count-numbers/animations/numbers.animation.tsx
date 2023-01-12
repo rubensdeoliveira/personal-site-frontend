@@ -1,10 +1,11 @@
 import { useSpring, animated } from '@react-spring/web'
+import dynamic from 'next/dynamic'
 
 type NumberAnimationProps = {
   n: number
 }
 
-export function NumberAnimation({
+function NumberAnimationComponent({
   n,
 }: NumberAnimationProps): React.ReactElement {
   const { number } = useSpring({
@@ -15,3 +16,10 @@ export function NumberAnimation({
   })
   return <animated.div>{number.to(n => n.toFixed(0))}</animated.div>
 }
+
+export const NumberAnimation = dynamic(
+  async () => await Promise.resolve(NumberAnimationComponent),
+  {
+    ssr: false,
+  },
+)
