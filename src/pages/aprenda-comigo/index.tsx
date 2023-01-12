@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 import { client } from '@/infra/graphql/common/client'
 import { normalizeData } from '@/application/helpers'
@@ -8,14 +8,14 @@ export default function LearnWithMe() {
   return null
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const postsResponse = await client.request(getPostsQuery)
   const { posts } = normalizeData(postsResponse)
   if (posts.length > 0) {
     return {
       redirect: {
         destination: `/aprenda-comigo/${posts[0].slug}`,
-        permanent: false,
+        permanent: true,
       },
     }
   } else {
