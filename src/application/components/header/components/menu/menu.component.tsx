@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Flex, Link, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 export function Menu() {
+  const [selectedMenu, setSelectedMenu] = useState(null)
   const { asPath } = useRouter()
 
   const menuItems = [
@@ -10,17 +11,22 @@ export function Menu() {
     { label: 'Aprenda Comigo', path: '/aprenda-comigo/get-posts' },
   ]
 
-  const resolveIsSelectedRoute = useMemo(() => {
+  useEffect(() => {
     const asPathRouteParts = asPath.split('/')
     const asPathRoutePartsWithBar = asPathRouteParts.map(
       asPathItem => `/${asPathItem}`,
     )
-    return menuItems.find(menuItem => {
-      return (
-        menuItem.path !== '/' && asPathRoutePartsWithBar.includes(menuItem.path)
-      )
-    })
-  }, [asPath, menuItems])
+    setSelectedMenu(
+      menuItems.find(menuItem => {
+        console.log(asPathRoutePartsWithBar[1])
+        return (
+          menuItem.path !== '/' &&
+          asPathRoutePartsWithBar.length > 0 &&
+          menuItem.path.includes(asPathRoutePartsWithBar[1])
+        )
+      }),
+    )
+  }, [asPath])
 
   return (
     <Flex
@@ -28,8 +34,9 @@ export function Menu() {
       gap={['1.6rem', '1.6rem', '1.6rem', '4.6rem', '4.6rem', '4.6rem']}
     >
       {menuItems.map(menuItem => {
+        console.log(selectedMenu)
         const isSelected =
-          resolveIsSelectedRoute?.path === menuItem.path ||
+          selectedMenu?.path === menuItem.path ||
           (menuItem.path === '/' && asPath === '/')
         return (
           <Link key={menuItem.label} href={menuItem.path}>
