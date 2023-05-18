@@ -18,7 +18,7 @@ export const normalizeData = (data: any) => {
   }
 
   if (isArray(data)) {
-    return data.map(item => normalizeData(item))
+    return data.map((item: any) => normalizeData(item))
   }
 
   if (isObject(data)) {
