@@ -1,0 +1,7 @@
+export * from './about'
+export * from './footer'
+export * from './header'
+export * from './hero'
+export * from './meta'
+export * from './services'
+export * from './why-choose-us'

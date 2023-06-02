@@ -1,15 +1,16 @@
-import type { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import '@rubensdeoliveira-ui/react/dist/index.css'
+import { type AppType } from 'next/app'
 
-import { theme } from '@/application/styles/theme'
-import { SidebarProvider } from '@/application/hooks'
+import '@/client/application/styles/globals.css'
+import { Meta } from '@/client/application/sections'
 
-export default function App({ Component, pageProps }: AppProps) {
+const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
-    <ChakraProvider theme={theme}>
-      <SidebarProvider>
-        <Component {...pageProps} />
-      </SidebarProvider>
-    </ChakraProvider>
+    <>
+      <Meta />
+      <Component {...pageProps} />
+    </>
   )
 }
+
+export default MyApp
