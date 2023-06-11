@@ -578,10 +578,10 @@
     "@react-spring/shared" "~9.7.2"
     "@react-spring/types" "~9.7.2"
 
-"@rubensdeoliveira-ui/react@1.68.0":
-  version "1.68.0"
-  resolved "https://registry.yarnpkg.com/@rubensdeoliveira-ui/react/-/react-1.68.0.tgz#524f4370f347f05069cc4ce4fe34207822f2ec42"
-  integrity sha512-+ZLacB/0G5dwJVRgMnUELdMjlOcgioYowYXFLmVWQJw2G7/CUj4KHgHzpzmMBB3AQp0QOTNsd5jwPsBUAi1zbg==
+"@rubensdeoliveira-ui/react@1.71.0":
+  version "1.71.0"
+  resolved "https://registry.yarnpkg.com/@rubensdeoliveira-ui/react/-/react-1.71.0.tgz#75b129d859cb7e114b778057d06ffaaa42ed480a"
+  integrity sha512-VEUPb/E0JMYR4CxZw1X0ywoaQAEg8SFTQqonWnLAheur7XbXR1qP2bK8AvSOvc2JHK6hf56sAi2Xs4IzgH8SIg==
   dependencies:
     "@heroicons/react" "2.0.14"
     class-variance-authority "0.4.0"

@@ -13,3 +13,23 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+/* Largura da scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Cor de fundo da scrollbar */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Cor do preenchimento da scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.mainTwo');
+}
+
+/* Efeito de hover na scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b37d00;
+}

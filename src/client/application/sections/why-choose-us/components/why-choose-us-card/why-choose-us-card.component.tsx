@@ -22,7 +22,7 @@ export function WhyChooseUsCard({
   }
 
   return (
-    <div className="w-full max-w-[285px] sm:max-w-[384px] flex flex-col items-start py-[2.625rem] px-6 md:px-7 lg:px-8 bg-mainFour hover:bg-mainFive hover:border-t-mainTwo hover:border-t-4">
+    <div className="w-full max-w-[285px] lg:max-w-[384px] flex flex-col items-start py-[2.625rem] px-6 md:px-7 lg:px-8 bg-mainFour hover:bg-mainFive hover:border-t-mainTwo hover:border-t-4">
       <div className="flex items-center justify-center p-4 md:p-[1.125rem] lg:p-5 bg-mainTwo text-mainOne text-[2.625rem] md:text-[2.875rem] lg:text-[3.125rem]">
         {renderIcon()}
       </div>

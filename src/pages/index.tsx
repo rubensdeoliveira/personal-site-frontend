@@ -7,12 +7,12 @@ import {
   Header,
   Hero,
   Services,
-  WhyChooseUs
+  WhyChooseUs,
+  Portfolio
 } from '@/client/application/sections'
 import { client } from '@/client/infra/graphql/common/client'
 import { getLandingPageQuery } from '@/client/infra/graphql/landing-page/queries'
 import { LandingPageQueryModel } from '@/client/infra/graphql/landing-page/models'
-import { Portfolio } from '@/client/application/sections/portfolio'
 
 export const getStaticProps: GetStaticProps = async () => {
   const landingResponse = await client.request(getLandingPageQuery)

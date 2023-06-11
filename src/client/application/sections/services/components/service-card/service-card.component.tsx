@@ -18,13 +18,13 @@ export function ServiceCard({ description, icon, title }: ServiceCardProps) {
   }
 
   return (
-    <div className="w-full max-w-[285px] sm:max-w-[384px] flex flex-col items-start py-[2.625rem] px-6 md:px-7 lg:px-8 bg-mainFour hover:bg-mainFive hover:border-t-mainTwo hover:border-t-4">
-      <div className="flex items-center justify-center p-4 md:p-[1.125rem] lg:p-5 bg-mainTwo text-mainOne text-[2.625rem] md:text-[2.875rem] lg:text-[3.125rem]">
+    <div className="flex flex-col items-start py-6 md:py-[2.0625rem] lg:py-[2.625rem] px-3 md:px-[1.375rem] lg:px-8 bg-mainFour hover:bg-mainFive hover:border-t-mainTwo hover:border-t-4">
+      <div className="flex items-center justify-center p-3 md:p-4 lg:p-5 bg-mainTwo text-mainOne text-[1.75rem] md:text-[2.4375rem] lg:text-[3.125rem]">
         {renderIcon()}
       </div>
       <Text
         as="h4"
-        fontSize={['20', '24', '28']}
+        fontSize={['15', '21', '28']}
         fontWeight={'700'}
         lineHeight={'1.2'}
         className="font-quicksand"

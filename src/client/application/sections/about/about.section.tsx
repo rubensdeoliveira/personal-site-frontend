@@ -1,10 +1,7 @@
 import { Text } from '@rubensdeoliveira-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import {
-  AboutProps,
-  FooterProps
-} from '@/client/infra/graphql/landing-page/models'
+import { AboutProps } from '@/client/infra/graphql/landing-page/models'
 import { Button, ContactIcons, Image, TitleWithTag } from '../../components'
 
 type ExtendedAboutProps = {
@@ -23,14 +20,14 @@ export function About({
   whatsLink
 }: AboutProps & ExtendedAboutProps) {
   return (
-    <section className="bg-mainFour h-[706px] md:h-[772px]">
-      <div className="gap-[2.625rem] md:gap-6 flex-col md:flex-row flex justify-between w-full max-w-[1200px] m-[0_auto] px-4 md:px-8 xl:px-0 pt-0 md:pt-[6.25rem]">
+    <section className="bg-mainFour">
+      <div className="relative justify-start items-center gap-[2.625rem] md:gap-8 flex-col md:flex-row flex md:justify-between w-full max-w-[1200px] m-[0_auto] px-4 md:px-8 xl:px-0 pt-0 pb-[2.625rem] md:pt-[4.4375rem] md:pb-[4.4375rem] min-[1113px]:pt-[1.625rem] min-[1113px]:pb-[1.625rem]">
         <Image
           src={photo.url}
           alt="Foto de Rubens de Oliveira"
-          className="mt-[-8.6875rem] md:mt-0 self-center md:self-start w-[220px] h-[322px] sm:w-[312px] sm:h-[457px] md:w-[300px] md:h-[439px] lg:w-[400px] lg:h-[586px] xl:w-[491px] xl:h-[720px] flex-shrink-0"
+          className="absolute top-[-139px] md:top-0 min-[1113px]:top-[82px] left-0 w-[220px] h-[322px] sm:w-[312px] sm:h-[457px] md:w-[350px] md:h-[513px] min-[1113px]:w-[491px] min-[1113px]:h-[720px] flex-shrink-0"
         />
-        <div className="max-w-[562px]">
+        <div className="max-w-[562px] mt-[-139px] md:mt-0">
           <TitleWithTag title={title} />
           <Text
             as="h3"

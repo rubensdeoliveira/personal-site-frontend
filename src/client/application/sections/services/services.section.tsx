@@ -12,9 +12,9 @@ export function Services({
   title
 }: ServicesProps) {
   return (
-    <section className="flex flex-col w-full pt-[12.375rem] pb-[9.375rem] max-w-[1200px] m-[0_auto] px-4 md:px-8 xl:px-0">
-      <div className="flex gap-[1.125rem] md:gap-6 flex-col items-center md:flex-row max-w-[1098px] justify-between mb-[4.5rem]">
-        <div className="flex flex-col max-w-[463px]">
+    <section className="flex flex-col w-full pt-[4.5rem] pb-[4.5rem] min-[1113px]:pt-[12.375rem] min-[1113px]:pb-[9.375rem] max-w-[1200px] m-[0_auto] px-4 md:px-8 xl:px-0">
+      <div className="flex max-w-[562px] m-[0_auto] mb-[2.5rem] md:m-0 md:mb-[4.5rem] items-start gap-[1.125rem] md:gap-6 flex-col md:items-center md:flex-row md:max-w-[1098px] justify-between">
+        <div className="flex flex-col max-w-[562px] md:max-w-[463px]">
           <TitleWithTag title={title} />
           <Text
             as="h3"
@@ -32,12 +32,12 @@ export function Services({
           fontSize={['12', '14', '16']}
           fontWeight={'500'}
           lineHeight={'1.5'}
-          className="text-textTwo max-w-[486px]"
+          className="text-textTwo max-w-[562px] md:max-w-[486px]"
         >
           {description}
         </Text>
       </div>
-      <div className="flex items-center gap-4 md:gap-5 lg:gap-6 flex-wrap justify-center">
+      <div className="grid grid-cols-2 gap-x-[0.375rem] lg:grid-cols-3 gap-y-4 sm:gap-x-4 sm:gap-y-4 md:gap-x-5 md:gap-y-5 lg:gap-x-6 lg:gap-y-6">
         {serviceCards.map((serviceCard) => (
           <ServiceCard key={serviceCard.id} {...serviceCard} />
         ))}

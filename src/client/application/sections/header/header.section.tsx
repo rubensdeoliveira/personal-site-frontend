@@ -12,7 +12,7 @@ export function Header() {
       <div className="w-full max-w-[1200px]">
         <Navbar
           mobileButtonClassName="text-white"
-          wrapperClassName="py-[1.0625rem] md:py-[2.1875rem] lg:py-[2.625rem] px-[1.25rem] w-full px-4 md:px-8 xl:px-0"
+          wrapperClassName="py-[1.0625rem] md:py-[2.1875rem] lg:py-[2.625rem] w-full px-4 md:px-8 xl:px-0"
           logo={
             <Link href={'/'}>
               <Logo />
